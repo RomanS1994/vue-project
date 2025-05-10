@@ -1,25 +1,14 @@
 <script setup>
-import IButton from './components/Ibutton/IButton.vue'
+import HomepageView from './views/HomepageView.vue'
 
-const classes = {
-  'bg-black': false,
-  'bg-red': true,
-  'btn': true,
-}
+const isDesctop = window.innerWidth > 1024
+const isTablet = window.innerWidth <= 1024 && window.innerWidth > 748
 </script>
 
-<template>Hello vue <IButton :class="classes"></IButton></template>
-
-<style>
-.btn {
-  color: white;
-}
-
-.bg-black {
-  background-color: black;
-}
-
-.bg-red {
-  background-color: red;
-}
-</style>
+<template>
+  <template v-if="isDesctop">
+    <HomepageView />
+  </template>
+  <template v-else-if="isTablet"> Tablet </template>
+  <template v-else> Mobile </template>
+</template>
