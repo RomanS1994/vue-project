@@ -1,14 +1,12 @@
 <script setup>
 import HomepageView from './views/HomepageView.vue'
-
-const isDesctop = window.innerWidth > 1024
-const isTablet = window.innerWidth <= 1024 && window.innerWidth > 748
+import FavoritePlaces from './components/FavoritePlaces/FavoritePlaces.vue'
+import FavoritePlaceIconButton from './components/FavoritePlace/FavoritePlaceIconButton.vue'
 </script>
 
 <template>
-  <template v-if="isDesctop">
-    <HomepageView />
-  </template>
-  <template v-else-if="isTablet"> Tablet </template>
-  <template v-else> Mobile </template>
+  <!-- <HomepageView /> -->
+  <div class="bg-white h-screen w-[400px]">
+    <FavoritePlaces />
+  </div>
 </template>
